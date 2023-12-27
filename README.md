@@ -2,12 +2,11 @@
 
 Example Kivy source code - showing how to rotate video - (using ffpyplayer video library).
 
-Enable kivy env - 
+Enable kivy environment if needed - 
 
-***source activate***
+Eg. ***source activate***
 
 Run application
-
 
 ***python3 rotvideo.py***
 
