@@ -10,6 +10,7 @@ class VideoWithRotation(BoxLayout):
     def __init__(self, file, angle, centre, animation=False, duration=1, **kwargs):
         super(VideoWithRotation, self).__init__(**kwargs)
         self.orientation = 'vertical'
+        self.centre = centre
         self.animation = animation
         self.duration = duration
         self.video = Video(source=file, state='play', options={'eos': 'loop'})
@@ -20,7 +21,7 @@ class VideoWithRotation(BoxLayout):
             PushMatrix()
             self.rot = Rotate()
             self.rot.angle  = angle
-            self.rot.origin = (600//2, 400//2) #self.video.center
+            self.rot.origin = self.centre
             self.rot.axis = (0, 0, 1)
         with self.canvas.after:
             PopMatrix()
